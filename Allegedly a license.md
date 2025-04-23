@@ -8,6 +8,8 @@ V 0.1:
   просто сплагиатил у зарубежного программиста
 V 0.2:
   добавил возможность спокойно закрыть игру комбинацией Alt+F4(До этого оно не всегда закрывалось)
+V 0.3:
+  Добавил новый блок(угольную руду)
 
 
 
@@ -19,3 +21,5 @@ V 0.1:
   just plagiarized from a foreign programmer
 V 0.2:
   added the ability to calmly close the game with the combination Alt + F4 (Before this it did not always close)
+V 0.3:
+  Added a new block (coal ore)
