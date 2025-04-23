@@ -7,6 +7,7 @@ app = Ursina()
 
 # загрузка ассетов
 grass_texture = load_texture("Assets/Textures/Grass_Block.png")
+coal_ore_texture = load_texture("Assets/Textures/Coal_Ore_Block.png")
 stone_texture = load_texture("Assets/Textures/Stone_Block.png")
 brick_texture = load_texture("Assets/Textures/Brick_Block.png")
 dirt_texture = load_texture("Assets/Textures/Dirt_Block.png")
@@ -32,6 +33,7 @@ def update():
     if held_keys["3"]: block_pick = 3
     if held_keys["4"]: block_pick = 4
     if held_keys["5"]: block_pick = 5
+    if held_keys["6"]: block_pick = 6
 
 
 # Voxel (блоки)
@@ -59,6 +61,7 @@ class Voxel(Button):
                 if block_pick == 3: Voxel(position=self.position + mouse.normal, texture=brick_texture)
                 if block_pick == 4: Voxel(position=self.position + mouse.normal, texture=dirt_texture)
                 if block_pick == 5: Voxel(position=self.position + mouse.normal, texture=wood_texture)
+                if block_pick == 6: Voxel(position=self.position + mouse.normal, texture=coal_ore_texture)
 
             if key == "left mouse down":
                 punch_sound.play()
