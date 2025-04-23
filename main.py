@@ -63,6 +63,9 @@ class Voxel(Button):
             if key == "left mouse down":
                 punch_sound.play()
                 destroy(self)
+                
+            if key == "alt+f4":
+                var = app.close_window
 
 
 # Небо
