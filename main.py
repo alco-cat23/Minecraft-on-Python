@@ -7,6 +7,7 @@ app = Ursina()
 
 # загрузка ассетов
 grass_texture = load_texture("Assets/Textures/Grass_Block.png")
+Bookshelf_texture = load_texture("Assets/Textures/Bookshelf.png")
 coal_ore_texture = load_texture("Assets/Textures/Coal_Ore_Block.png")
 stone_texture = load_texture("Assets/Textures/Stone_Block.png")
 brick_texture = load_texture("Assets/Textures/Brick_Block.png")
@@ -19,7 +20,7 @@ window.exit_button.visible = False
 block_pick = 1
 
 
-# Обновление кадров
+# Взаимодействие с инвентарём
 def update():
     global block_pick
 
@@ -34,11 +35,14 @@ def update():
     if held_keys["4"]: block_pick = 4
     if held_keys["5"]: block_pick = 5
     if held_keys["6"]: block_pick = 6
+    if held_keys["7"]: block_pick = 7
+    if held_keys["8"]: block_pick = 8
+    if held_keys["9"]: block_pick = 9
 
 
 # Voxel (блоки)
 class Voxel(Button):
-    def __init__(self, position=(0, 0, 0), texture=stone_texture):
+    def __init__(self, position=(0, 0, 0), texture=dirt_texture):
         super().__init__(
             parent=scene,
             position=position,
@@ -62,6 +66,7 @@ class Voxel(Button):
                 if block_pick == 4: Voxel(position=self.position + mouse.normal, texture=dirt_texture)
                 if block_pick == 5: Voxel(position=self.position + mouse.normal, texture=wood_texture)
                 if block_pick == 6: Voxel(position=self.position + mouse.normal, texture=coal_ore_texture)
+                if block_pick == 7: Voxel(position=self.position + mouse.normal, texture=Bookshelf_texture)
 
             if key == "left mouse down":
                 punch_sound.play()
@@ -69,6 +74,9 @@ class Voxel(Button):
                 
             if key == "alt+f4":
                 var = app.close_window
+
+            if key == "e" or key == "E":
+                pass
 
 
 # Небо
@@ -78,7 +86,7 @@ class Sky(Entity):
             parent=scene,
             model="Sphere",
             texture=sky_texture,
-            scale=1500,
+            scale=1000,
             double_sided=True
         )
 
@@ -102,7 +110,7 @@ class Hand(Entity):
         self.position = Vec2(0.4, -0.6)
 
 
-#Создание карты мира
+# Создание карты мира
 for z in range(20):
     for y in range(2):
         for x in range(20):
