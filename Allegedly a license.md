@@ -10,6 +10,8 @@ V 0.2:
   добавил возможность спокойно закрыть игру комбинацией Alt+F4(До этого оно не всегда закрывалось)
 V 0.3:
   Добавил новый блок(угольную руду)
+V 0.4:
+  Добавил новый блок(книжную полку)
 
 
 
@@ -23,3 +25,5 @@ V 0.2:
   added the ability to calmly close the game with the combination Alt + F4 (Before this it did not always close)
 V 0.3:
   Added a new block (coal ore)
+V 0.4:
+  Added a new block (bookshelf)
